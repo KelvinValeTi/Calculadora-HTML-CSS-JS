@@ -24,7 +24,7 @@ function corrige(){ //caso o número do visor seja diferente de zero, o ultimo a
 
     document.getElementById("painel").innerText = newCorrige;
 
-    if(newCorrige = ""){
+    if(newCorrige == ""){
         limpa();
     }
 }
@@ -90,43 +90,43 @@ function resultado(){//calcula o resultado da operação no visor.
         }else if(visor[i] == "-" || visor[i] == "+"){
             operacao = visor[i];
         }else if(operacao == 'nada'){
-            num1 += visor[i];
+            if(visor[i]==','){ //se houver virgula, substitui por ponto.
+                num1 += '.';
+            }else{
+                num1 += visor[i];
+            }
         }else{
-            num2 += visor[i];
+            if(visor[i]==','){
+                num2+='.';
+            }else{
+                num2 += visor[i];
+            }
         }
     }
-    //num1 = trataVirgula(num1);
-    //num2 = trataVirgula(num2);
-
-    alert(num1)
-    alert(num2)
+   
 
     switch(operacao){
         case '+':
-        //result = parseFloat(num1)+Number.parseFloat(num2);
+            result = parseFloat(num1)+parseFloat(num2);
             break;
         case '-':
-            result = Number(num1)-Number(num2);
+            result = parseFloat(num1)-parseFloat(num2);
             break;
         case 'x':
-            result = Number(num1)*Number(num2);
+            result = parseFloat(num1)*parseFloat(num2);
             break;
         case '/':
-            result = Number(num1)/Number(num2);
+            result = parseFloat(num1)/parseFloat(num2);
             break;
         default:
             alert("error");
     }
-    alert(result)
+    
+    
+    document.getElementById("painel").innerText = result;
 }
 
-function trataVirgula(num){ //troca a virgula por ponto.
-    let numero = num;
-    for(let i=0; i<numero.length;i++){
-        if(numero[i]==','){
-            numero[i]='.';
-        }
-    }
-    return numero;
-}
+
+
+
 
