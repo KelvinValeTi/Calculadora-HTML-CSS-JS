@@ -59,6 +59,8 @@ function operacao(operacao){
     let op = operacao;
     let cont = false; //quando for true, significa que tem algo que impossibilita de uma nova operação ser lançada.
 
+    let verificaOperação = false; //quando for true, significa que há uma operação (que não seja o ultimo caractere), e é realizada a operação.
+
     let visor = document.getElementById("painel");
     
     let lastChar = visor.innerText.length-1; //armazena o ultimo elemento da string do visor.
@@ -70,10 +72,20 @@ function operacao(operacao){
         cont = true;
     }else if(visor.innerText[lastChar] == "+"){
         cont = true;
+    }else{
+        for(let i=0; i<visor.innerText.length-1;i++){ //se já houver uma operação no visor, é feita a operação - o ultimo elemento não é verificado.
+            if(visor.innerText[i]=='+' || visor.innerText[i]=='-'){
+                verificaOperação = true;
+            }else if(visor.innerText[i]=='x' || visor.innerText[i]=='/'){
+                verificaOperação = true;
+            }
+        }
     }
 
-    if(cont==false){ //adiciona operação no visor.
+    if(cont==false && verificaOperação == false){ //adiciona operação no visor.
         visor.innerText += op;
+    }else if(cont ==false && verificaOperação==true){
+        resultado();
     }
 }
 
@@ -122,8 +134,9 @@ function resultado(){//calcula o resultado da operação no visor.
             alert("error");
     }
     
-    
     document.getElementById("painel").innerText = result;
+
+    return result;
 }
 
 
