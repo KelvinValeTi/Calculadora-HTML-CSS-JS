@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleCalc.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <h2>Calculadora JavaScript</h2>
+
+    <div id="painel">
+        <p>0</p>
+    </div>
+
+    <div id="teclado">
+        
+        <button type="button" id="reset" onclick="limpa()">C</button>
+        <button type="button" id="corrige" onclick="corrige()">Corrige</button>
+        <button type="button" id="divide" onclick="operacao('/')">/</button>
+        
+        
+
+        <button type="button" id="sete" onclick="typingWriteNumber(7)">7</button>
+        <button type="button" id="oito" onclick="typingWriteNumber(8)">8</button>
+        <button type="button" id="nove" onclick="typingWriteNumber(9)">9</button>
+        <button type="button" id="multiplica" onclick="operacao('x')">X</button>
+
+        <button type="button" id="quatro" onclick="typingWriteNumber(4)">4</button>
+        <button type="button" id="cinco" onclick="typingWriteNumber(5)">5</button>
+        <button type="button" id="seis" onclick="typingWriteNumber(6)">6</button>
+        <button type="button" id="subtrai" onclick="operacao('-')">-</button>
+
+        <button type="button" id="um" onclick="typingWriteNumber(1)">1</button>
+        <button type="button" id="dois" onclick="typingWriteNumber(2)">2</button>
+        <button type="button" id="tres" onclick="typingWriteNumber(3)">3</button>
+        <button type="button" id="soma" onclick="operacao('+')">+</button>
+        
+        <button type="button" id="zero" onclick="typingWriteNumber(0)">0</button>
+        <button type="button" id="virgula" onclick="virgula()" >,</button>
+        <button type="button"id="igual" onclick ="resultado()">=</button>
+    </div>
+
+
+    <script src="scriptCalc.js"></script>
+</body>
+</html>
