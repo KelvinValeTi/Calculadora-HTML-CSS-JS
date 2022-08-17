@@ -22,6 +22,12 @@ body{
     font-family: 'Passion One', cursive;
 }
 
+h2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
 #painel{
     border: 5px solid #541212;
     border-radius: 5px;
@@ -75,9 +81,8 @@ body{
 
 #teclado{
     
-
     width:700px;
-    height:400px;
+    height:350px;
 
     padding-top: 20px;
 
@@ -97,4 +102,65 @@ body{
 
 #teclado button:hover{
     background-color: #541212;
+}
+
+/*=============
+RESPONSIVIDADE
+==============*/
+@media (max-width: 755px) and (min-width: 631px){
+    body{
+        font-size:25pt;
+    }
+    
+    h2{
+        margin-bottom:20px;
+    }
+    
+    #painel{
+        width:600px;
+    }
+    
+    #teclado{   
+        width:600px;
+        height:350px;
+    }
+}
+
+@media (max-width: 630px) and (min-width:526px){
+    body{
+        font-size:20pt;
+    }
+    
+    h2{
+        margin-bottom:20px;
+    }
+    
+    #painel{
+        width:500px;
+    }
+    
+    #teclado{   
+        width:500px;
+        height:350px;
+    }
+}
+
+@media (max-width: 525px){
+    body{
+        padding:10px;
+        font-size:18pt;
+    }
+    
+    h2{
+        margin-bottom:20px;
+    }
+    
+    #painel{
+        width:430px;
+    }
+    
+    #teclado{   
+        width:430px;
+        height:350px;
+    }
 }
