@@ -145,7 +145,7 @@ RESPONSIVIDADE
     }
 }
 
-@media (max-width: 525px){
+@media (max-width: 525px) and (min-width:500px){
     body{
         padding:10px;
         font-size:18pt;
@@ -162,5 +162,25 @@ RESPONSIVIDADE
     #teclado{   
         width:430px;
         height:350px;
+    }
+}
+
+@media (max-width:499px){
+    body{
+        padding:10px;
+        font-size:12pt;
+    }
+    
+    h2{
+        margin-bottom:10px;
+    }
+    
+    #painel{
+        width:350px;
+    }
+    
+    #teclado{   
+        width:350px;
+        height:280px;
     }
 }
